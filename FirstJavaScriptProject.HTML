@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title > Java Project </title>
+	<link rel="stylesheet" href="stylesheet.css"/>
+	
+</head>
+<body>
+<div class = "header">
+	<h1 id = "heading"> My First Java Project</h1>
+	<p class = "line"> With Lots Of Fucking Ideas </p>
+</div>
+
+<div class = "container">
+	<form method = "post" action = "FirstProject.HTML" name = "myform" onsubmit = "ValidForm()">
+	<div>
+		<label> Your Fucking First Name </label>
+		<input type="text" name="firstname" id = "firstname" />
+	</div>
+	<br />
+	<div >
+		<label> Your Fucking Second Name </label>
+		<input type = "text" name = "secondname" id = "secondname" />
+	</div>
+	<br />
+	<input type = "submit" value = "submit" />
+	</form>
+	</div>
+<script>
+fuction ValidForm()
+{
+	var Firstname = document.form["myform"]["firstname"].value;
+	if (Firstname == null || Firstname == " ")
+	{
+		alert("First Name Is Required");
+		return false;
+	}
+	else
+	{
+		alert("Must Be Greater Than Three Characters");
+		return false;
+	}
+}
+</script>
+</body>
+</html>

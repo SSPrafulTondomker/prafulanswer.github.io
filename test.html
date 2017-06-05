@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	body
+	{
+		background-color: rgb(0,255,17);
+	}
+	#Password
+	{
+		font-size: 25px;
+	}
+	.button
+	{
+		background-color: red;
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 60%;
+   		left: 45%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+	}
+	.Forgot
+	{
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 49%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+   		font-size: 25px;
+	}
+	.FirstName
+	{
+		font-size: 25px;
+		background-color: red;
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 32%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+	}
+	#FirstName
+	{
+		font-size: 25px;
+	}
+	.Password
+	{
+		font-size: 25px;
+		background-color: red;
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 40%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+	}
+	.CheckBox
+	{
+		font-size: 25px;
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 55%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+	}
+	#CheckBox
+	{
+		font-size: 25px;
+		border-width: 25px;
+	}
+	button {
+    background-color: red;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+</style>
+<head>
+	<title style = "margin: auto 0" >Sign In or Log In Page</title>
+</head>
+<body>
+<h1> Sign In or Log In</h1>
+<div class = "FirstName">
+First Name <input type="text" placeholder="Enter the Username" name="FirstName" id="FirstName" required />
+</div>
+<br />
+<div class="Password">
+Password <input type="password" name="Password" placeholder="Enter the Password" id="Password"  required />
+</div>
+<br />
+<div class = "CheckBox">
+	<input type="checkbox" checked="checked" id = "CheckBox"> Remember me
+</div>
+<br />
+<div class="Forgot">
+<a href="Forgot.html" onmouseover="">Forgot Password </a> 
+<a href="Create.html">Create Account </a>
+</div>
+<div class="button">
+<button type = "submit" onclick="CheckFunction()"> Login</button>
+</div>
+<script type="text/javascript">
+	function CheckFunction()
+	{
+		if (FirstName.value == 'my' && Password.value == '123')
+		{
+			alert('access granted');
+			window.open('Answer.html');
+		}
+		else
+		{
+			alert('error try again')
+		}
+	}
+</script>
+</body>
+</html>

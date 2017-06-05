@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	body
+	{
+		background-color: rgb(255,67,67);
+	}
+	#PutAnswer
+	{
+		font-size: 45px;
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 70%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+	}
+	#Question
+	{
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 20%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+		font-size: 25px;
+		-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+	}
+	#QuestionText
+	{
+		font-size: 25px;
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 30%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+	}
+	#Request
+	{
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 40%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+		font-size: 25px;
+		-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+	}
+	@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+	#RequestText
+	{
+		font-size: 25px;
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 50%;
+   		left: 39%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;
+	}
+	#Button
+	{
+		font-size: 25px;
+		width: Xu;
+   		height: Yu;
+   		position: absolute;
+   		top: 63%;
+   		left: 34%;
+   		margin-left: -(X/2)u;
+   		margin-top: -(Y/2)u;	
+	}
+	input
+	{
+		background-color: white;
+		padding: 14px 20px;
+    	margin: 8px 0;
+	}
+	button:hover 
+	{
+    	opacity: 0.8;
+	}
+	button 
+	{
+    	background-color: #4CAF50;
+    	color: white;
+    	padding: 14px 20px;
+    	margin: 8px 0;
+    	border: none;
+    	cursor: pointer;
+    	width: 40%;
+	}
+</style>
+<head>
+	<title>Praful Please Answer </title>
+</head>
+<body>
+<marquee direction="right" style="font-size: 35px">Request Here And Get The Answer</marquee>
+<h2 id="Question"> Your Question </h2>
+<input type="text" name="Question" id="QuestionText" required />
+<h2 id="Request">Your Request </h2>
+<input type="text" name="Request" id="RequestText"  onkeypress="ChangeRequest()" required   ></input>
+<button type="button" id="Button" onclick="GetAnswer()">Get The Answer</button>
+<p id="PutAnswer"> </p>
+<script >
+	var AnswerString,k=1;
+	AnswerString = '';
+	function GetAnswer()
+	{
+		if (document.getElementById("QuestionText").value == null || (document.getElementById("QuestionText").value).length == 0)
+		{
+			document.getElementById("PutAnswer").innerHTML = "Dont Try To Fool Me First Ask The Question";
+		}
+		else
+		{
+			document.getElementById("PutAnswer").innerHTML = "Answer : "+ AnswerString;
+		}
+	}
+	function ChangeRequest()
+	{
+		var Size,Input,Default,p;
+		Default = 'Praful Please Answer The Following Question';
+		Input = document.getElementById("RequestText").value ;
+		Size = Input.length;
+		if (Size == 0)
+		{
+			AnswerString += Input;
+			Input = Input.replace(Input,'P');
+			document.getElementById("RequestText").value = Input;
+		}
+		else
+		{
+			AnswerString += Input[Size-1];
+			Input = Input.replaceAt(Size-1,Default[k]);
+			k += 1;
+			document.getElementById("RequestText").value = Input;
+		}
+	}
+	String.prototype.replaceAt=function(index, replacement) 
+	{
+    	return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
+	}
+</script>
+</body>
+</html>

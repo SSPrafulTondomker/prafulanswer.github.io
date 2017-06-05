@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Login page</title>
+    </head>
+    <body>
+        <h1>Simple Login Page</h1>
+        <form name = "login" >
+        <div class = "Username">
+            Username<input type="text" name="userid"/>
+        </div>
+        <br />
+        <div class = "password">
+            Password<input type="password" name="pswrd"/>
+        </div>
+        <br />
+        <div class = " buttons ">
+            <input type="button" onclick="check(this.form)" value="Login"/>
+            <input type="reset" value="Cancel"/>
+        </div>
+        <br />
+        </form>
+        <script language = "javascript">
+            function check(form) 
+            { 
+                if(form.userid.value == "my" && form.pswrd.value == "my")
+                {
+                    window.open('FirstProject.HTML');
+                }
+                else
+                {
+                    alert("Error Password or Username");
+                }
+            }
+        </script>
+    </body>
+</html>

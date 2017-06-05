@@ -1,0 +1,23 @@
+<html>
+<form action="components/CatagoryService.cfc?method=saveVersion">
+<input id="version" name="version" type="text">
+<table id="table">
+  <thead><tr><th>name col</th>
+  <th>min col</th>
+  <th>max col</th>
+  <th>edit</th>
+</tr></thead>
+  <tfoot></tfoot>
+  <cfoutput query="variables.query">
+  <tr><td><input name="name[]" type="text" value="#variables.query.name#"></td>
+   <td><input name="min[]" type="text" value="#variables.query.min#"></td>
+   <td><input name="max[]" type="text" value="#variables.query.max#"></td>
+   <td><input name="id[]" type="hidden" value="#variables.query.id#">
+     <a href="#" class="editLink">edit</a></td>
+  </tr>
+  </cfoutput>
+  <tr><td></td><td></td><td><a href="#" class="addLink">add</a></td></td></tr>
+</table>
+<input type="Submit"/>
+</form>
+</html>
